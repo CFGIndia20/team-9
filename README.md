@@ -16,3 +16,8 @@ Email: sewlanis2605@gmail.com
 Tania Rajabally <br/>
 Phone: 8452065151 <br/>
 Email: taniarajabally@gmail.com
+
+
+Samiksha Kapoor <br/>
+Phone: 8728893982 <br/>
+Email: samiksha9914@gmail.com
