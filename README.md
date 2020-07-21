@@ -21,3 +21,7 @@ Email: taniarajabally@gmail.com
 Samiksha Kapoor <br/>
 Phone: 8728893982 <br/>
 Email: samiksha9914@gmail.com
+
+Raj Joshi <br/>
+Phone : 9022295540 <br/>
+Email : rj8228@gmail.com
