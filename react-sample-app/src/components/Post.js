@@ -3,6 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import classe from './Post.module.css';
 import FileUpload from './FileUpload';
+import { Container } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,9 +27,10 @@ function Post(props) {
     }
 
         return (
-            <div className={classe.border}>
-            <form className={classes.root}>
-            <div className = {classe.left}>
+          <Container>
+            <Row>
+            <Form className={classes.root}>
+            <Row>
               <TextField
                   id="standard-multiline-textfield"
                   multiline
@@ -33,12 +38,13 @@ function Post(props) {
                   value={value}
                   onChange={handleChange}
                   placeholder="Enter your experience"/>
-            </div>
-            <div>
+            </Row>
+            <Row>
                 <FileUpload/>
-            </div>
-            </form>
-            </div>
+                </Row>
+            </Form>
+            </Row>
+        </Container>
         )
     
 }

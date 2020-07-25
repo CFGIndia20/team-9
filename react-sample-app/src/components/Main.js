@@ -47,7 +47,6 @@ import { AssignTask } from './assignTask';
 import { AssignHomework } from './assignHomework';
 
 
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -62,7 +61,13 @@ import {
 import { connect } from 'react-redux';
 import Attendance from './Attendance';
 import adminDashboard from './adminDashboard';
+<<<<<<< HEAD
+import updateProfileAdmin from './updateProfileAdmin';
+import updateProfileUser from './updateProfileUser';
+// import { } from '../actions/postActions';
+=======
 import { } from '../actions/postActions';
+>>>>>>> 7909d56ef33e6cc62cca9a592359382cc89bc0aa
 
 
 
@@ -101,7 +106,9 @@ class Main extends Component{
                 <Route exact path='/Attendance' component={Attendance} />
                 <Route exact path='/AdminDashboard' component={adminDashboard} />
                 <Route exact path='/AdminDashboard/assigntask' component={AssignTask} />
+                <Route exact path='/AdminDashboard/updateprofile' component={updateProfileAdmin} />
                 <Route exact path='/AdminDashboard/assignhomework' component={AssignHomework} />
+                <Route exact path='/updateprofile' component={updateProfileUser} />
                 <Route exact path='/Login' component={Login} />
                 <Route exact path='/Post' component={Post_wra}/>
                 <Route exact path='/DashBoard' component={DashBoard}/>
@@ -112,7 +119,7 @@ class Main extends Component{
 
                 <Grid item   lg={12} md={12}>
 
-                    <AppBar style={{ background: '#5C9AEE' }}>
+                    <AppBar style={{ background: '#9e1f5f' }}>
 
                         <Toolbar>
 

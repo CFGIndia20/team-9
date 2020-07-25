@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import { ButtonGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export class adminDashboard extends Component {
     constructor(props){
@@ -17,8 +18,12 @@ export class adminDashboard extends Component {
             <div>
                 <Container fluid>
                     <ButtonGroup aria-label="Basic example">
-                        <Button variant="primary" style={{margin:'50px'}}>Assign Task</Button>
-                        <Button variant="primary" style={{margin:'50px'}}>Assign HomeWork</Button>
+                    <Link to="/AdminDashboard/assigntask">
+                        <Button variant="" style={{margin:'50px',background:'#9e1f5f',color:'white'}}>Assign Task</Button>
+                    </Link>
+                    <Link to="/AdminDashboard/assignhomework">
+                        <Button variant="" style={{margin:'50px',background:'#9e1f5f',color:'white'}}>Assign HomeWork</Button>
+                        </Link>
                     </ButtonGroup>
                 </Container>
             </div>
