@@ -1,0 +1,14 @@
+.list_item {
+  width: 250px;
+  height: 80px;
+  text-align: center;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 100px;
+    background-color: blue;
+    margin: 100px 200px;
+    color:white;
+    padding: 20px;
+}

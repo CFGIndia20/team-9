@@ -36,10 +36,10 @@ import Home from './Home';
 import Login from './Login';
 import Contact_us from './Contact_us';
 import Post from './Post';
+import DashBoard from './DashBoard';
+import HomeWork from './HomeWork';
+import ProductTask from './ProductTask';
 import classes from './Main.module.css' ;
-
-
-
 
 import {
   BrowserRouter as Router,
@@ -91,7 +91,10 @@ class Main extends Component{
                 <Route exact path='/Contact' component={Contact_us} />
                 <Route exact path='/Login' component={Login} />
                 <Route exact path='/Post' component={Post}/>
-                
+                <Route exact path='/DashBoard' component={DashBoard}/>
+                <Route exact path='/HomeWork' component={HomeWork}/>
+                <Route exact path='/ProductTask' component={ProductTask}/>
+
                 <Grid item   lg={12} md={12}>
 
                     <AppBar style={{ background: '#5C9AEE' }}>
