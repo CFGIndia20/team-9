@@ -30,7 +30,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import Create_profile from './Create_profile';
 
 import { connect } from 'react-redux';
-import { login,register,save_id } from '../actions/postActions';
+import { login,register,save_id,log_in } from '../actions/postActions';
 
 import {
   BrowserRouter as Router,
@@ -100,6 +100,7 @@ import {
       ...this.state,
       android:true,
     });
+    this.props.log_in(true);
   }
 
 
@@ -200,7 +201,7 @@ render() {
         this.props.loggedin.status=='success' ?
         <span>
           {this.props.save_id(this.props.loggedin.uid)}
-        <Redirect to="/" />
+        <Redirect to="/DashBoard" />
         </span>
         :
         null
@@ -347,4 +348,4 @@ render() {
       
     });
 
-    export default connect(mapStateToProps,{login,register,save_id})(Login);
+    export default connect(mapStateToProps,{login,register,save_id,log_in})(Login);

@@ -1,4 +1,4 @@
-import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,save_uid } from './types';
+import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,is_loggedin,ccp,save_uid,homework_call } from './types';
 import axios from 'axios';
 import { useRadioGroup } from '@material-ui/core';
 
@@ -31,6 +31,13 @@ export const login = (no,pass) => dispatch => {
   //   );
 };
 
+
+export const  log_in = (val) => dispatch => {
+  dispatch({
+    type: is_loggedin,
+    payload: val,
+  })
+};
 
 export const save_id = (id) => dispatch => {
   dispatch({

@@ -1,10 +1,11 @@
-import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,save_uid} from '../actions/types';
+import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,save_uid,is_loggedin,homework_call} from '../actions/types';
 
 const initialState = {
   
   loggedin:{
     status:'error',
   },
+  is_log:false,
   register_:{
     // success:true,
     // status:'success',
@@ -14,7 +15,6 @@ const initialState = {
   profile_created:{
     // success:false,
     status:'error',
-
   }
   
 };
@@ -22,7 +22,12 @@ const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
     
-     
+      case is_loggedin:
+      return {
+        ...state,
+        is_log: action.payload,
+        // userid:action.payload.
+      };
       case LOGIN:
       return {
         ...state,
