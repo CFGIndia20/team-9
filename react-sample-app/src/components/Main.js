@@ -52,6 +52,7 @@ import {
 } from "react-router-dom";
 
 import { connect } from 'react-redux';
+import Attendance from './Attendance';
 // import { } from '../actions/postActions';
 
 
@@ -88,6 +89,7 @@ class Main extends Component{
 
                 <Route exact path='/' component={Home} />
                 <Route exact path='/Contact' component={Contact_us} />
+                <Route exact path='/Attendance' component={Attendance} />
                 <Route exact path='/Login' component={Login} />
                 
                 
@@ -138,6 +140,7 @@ class Main extends Component{
                                     className={classes.logo}
                                     >Login</Typography>
                                     </Button>
+                                    
                                     </Link>  
                                     </span>
 
