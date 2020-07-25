@@ -2,7 +2,19 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import classe from './Task.module.css';
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    useLocation,
+    IndexRoute,
+    Route,
+    Link,
+    Redirect,
+    useParams
+  } from "react-router-dom";
+  
 function displayProductTaskList() {
+    // 
     const productlist=[ "DiyaMaking",
     "Embroidery",
     "maintaining Budget",
@@ -10,10 +22,10 @@ function displayProductTaskList() {
     "curtains",];
     return (
         <div>
-        <h2 className={classe.heading}>CLICK TO UPLOAD CONTENT</h2>
+        {/* <h2 className={classe.heading}></h2> */}
         <div style={{margin:"6em 37em"}}>
                {productlist.map((item,index)=>{
-                  return <Button className={classe.list_item} key={index}>{item}</Button>
+                  return  <Link to="/HomeWork" ><Button className={classe.list_item} key={index}>{item}</Button></Link>
                })}
            
         </div>
