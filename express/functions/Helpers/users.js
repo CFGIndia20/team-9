@@ -86,9 +86,14 @@ app.post("/userInfo",(req,res)=>{
         messaging.collection("users").add(user)
     .then((result) => {
         console.log(result);
-        res.send(JSON.stringify(user));
+        res.send({ "status":"success",
+        "url":JSON.stringify(user)});
     }).catch(function(error) {
-        console.log('Error unsubscribing from topic:', error);
+        console.log('Error:', error);
+        res.send({
+            "status":"error",
+            "error":"userInfo error"
+        })
       });
 })
 
@@ -109,11 +114,19 @@ app.post("/updateProfile",(req,res)=>{
 query.once("value", function(snapshot) {
     snapshot.forEach(function(userSnapshot) {
         if(req.body.timeAvail!=null){
-        userSnapshot.ref().update({ timeAvail: req.body.timeAvail });
+        userSnapshot.ref().update({ timeAvail: req.body.timeAvail }).then((result) => {
+            console.log(result);
+            res.send({ "status":"success"});
+        });
         }
         if(req.body.location!=null){
             userSnapshot.ref().update({ location: req.body.location });
             }
+    }).catch((err)=>{
+        res.send({
+            "status":"error",
+            "error":"update profile error"
+        })
     });
 });
 })
@@ -123,8 +136,15 @@ app.post("/setSkillsRole",(req,res)=>{
 query.once("value", function(snapshot) {
     snapshot.forEach(function(userSnapshot) {
         if(req.body.skills!=null && req.body.role!=null){
-        userSnapshot.ref().update({ skills: req.body.skills, role:req.body.role });
+        userSnapshot.ref().update({ skills: req.body.skills, role:req.body.role }).then((result) => {
+            console.log(result);
+            res.send({ "status":"success"})});
         }
+    }).catch((err)=>{
+        res.send({
+            "status":"error",
+            "error":"set skills and role error"
+        })
     });
 });
 })
