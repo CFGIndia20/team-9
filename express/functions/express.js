@@ -5,7 +5,7 @@ const adminJson = require("./admin.json")// download this json from firebase ser
 const bodyParser = require("body-parser")
 
 
-const helper_tasks = require("./functions/Helpers/tasks")
+const helper_tasks = require("./Helpers/tasks")
 
 
 if (!module.parent){
