@@ -81,6 +81,42 @@ query.once("value", function(snapshot) {
 });
 })
 
+app.get('/tasks',(req,res)=>{
+    let ref = admin.firestore();
+    var tasks =[]
+   
+    ref.collection("tasks").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        let data = doc.data();
+        var task = {};
+        task.id= doc.id;
+        task.name = data.name;
+        task.desc = data.desc;
+        tasks.push(task);
+    })
+        console.log(tasks);
+        return res.status(200).json(tasks);
+    })
+    
+})
 
+app.get('/homework',(req,res)=>{
+    let ref = admin.firestore();
+    var tasks =[]
+   
+    ref.collection("submissions").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        let data = doc.data();
+        var task = {};
+        task.id= doc.id;
+        task.name = data.name;
+        task.desc = data.desc;
+        tasks.push(task);
+    })
+        console.log(tasks);
+        return res.status(200).json(tasks);
+    })
+    
+})
 
 module.exports = app
