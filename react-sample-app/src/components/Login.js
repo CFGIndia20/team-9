@@ -30,7 +30,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import Create_profile from './Create_profile';
 
 import { connect } from 'react-redux';
-import { login,register } from '../actions/postActions';
+import { login,register,save_id } from '../actions/postActions';
 
 import {
   BrowserRouter as Router,
@@ -52,11 +52,15 @@ import {
     constructor(props) {
       super(props);
 
+      
+
       this.handleChange=this.handleChange.bind(this);
       this.handleClickShowPassword=this.handleClickShowPassword.bind(this);
       this.handleMouseDownPassword=this.handleMouseDownPassword.bind(this);
       this.login_api=this.login_api.bind(this);
       this.register_api=this.register_api.bind(this);
+      // this.Url=this.Url.bind(this);
+
 
 
 
@@ -66,6 +70,7 @@ import {
         phone_no:'',
         showPassword: false,
         password_limit:0,
+        android:false,
         // loading : false,
       }
 
@@ -74,10 +79,45 @@ import {
   componentWillMount() {
     // this.props.fetchPosts(1);
   console.log('login');
+  // var parameters = window.location.search;
+  //     var url = parameters;
+  //     console.log(parameters);
+  //     console.log(url);
+
+  //     var android = this.Url.get.android;
+  //     console.log(android);
+  var url=window.location.href;
+  console.log(url);
+  var uid=url.split('=');
+  // console.log(url.split('='));
+  // console.log(url.split('?'));
+  var android=uid[0].split('?');
+
+  if(android[1]=='android'){
+    console.log(uid[1]);
+    this.props.save_id(uid[1]);
+    this.setState({
+      ...this.state,
+      android:true,
+    });
+  }
+
+
 
 }
 
-
+Url = {
+  get get(){
+  var vars= {};
+  if(window.location.search.length!==0)
+  window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value){
+  key=decodeURIComponent(key);
+  if(typeof vars[key]==="undefined") {vars[key]= decodeURIComponent(value);}
+  else {vars[key]= [].concat(vars[key], decodeURIComponent(value));}
+  });
+  return vars;
+  }
+  };
 
  handleChange = (prop) => (event) => {
   // setValues({ ...values, [prop]: event.target.value });
@@ -144,14 +184,25 @@ this.props.register(this.state.phone_no,this.state.password);
 render() {
 
   // const classes = useStyles();
+  
 
     return (
 <div>
+
   {this.props.register_.error}
+  {
+       this.state.android ?
+        <Redirect to="/" />:
+        null
+}
 {
         // this.props.register_.success ?
         this.props.loggedin.status=='success' ?
-        <Redirect to="/" />:
+        <span>
+          {this.props.save_id(this.props.loggedin.uid)}
+        <Redirect to="/" />
+        </span>
+        :
         null
 }
       {
@@ -298,4 +349,4 @@ render() {
       
     });
 
-    export default connect(mapStateToProps,{login,register})(Login);
+    export default connect(mapStateToProps,{login,register,save_id})(Login);

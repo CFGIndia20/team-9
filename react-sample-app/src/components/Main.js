@@ -36,6 +36,9 @@ import Home from './Home';
 import Login from './Login';
 import Contact_us from './Contact_us';
 import Post from './Post';
+import DashBoard from './DashBoard';
+import HomeWork from './HomeWork';
+import ProductTask from './ProductTask';
 import classes from './Main.module.css' ;
 import { AssignTask } from './assignTask';
 import { AssignHomework } from './assignHomework';
@@ -98,7 +101,10 @@ class Main extends Component{
                 <Route exact path='/AdminDashboard/assignhomework' component={AssignHomework} />
                 <Route exact path='/Login' component={Login} />
                 <Route exact path='/Post' component={Post}/>
-                
+                <Route exact path='/DashBoard' component={DashBoard}/>
+                <Route exact path='/HomeWork' component={HomeWork}/>
+                <Route exact path='/ProductTask' component={ProductTask}/>
+
                 <Grid item   lg={12} md={12}>
 
                     <AppBar style={{ background: '#9e1f5f' }}>
@@ -116,6 +122,13 @@ class Main extends Component{
                                 </Grid>
                                 <Grid item  md={6} lg={6} >
                                 <div >
+                                <Link to="/DashBoard" ><Button   >
+                                        <Typography 
+                                    className={classes.logo}
+                                    >
+                                            DashBoard
+                                        </Typography>
+                                </Button></Link>
                                 <Link to="/" ><Button   >
                                         <Typography 
                                     className={classes.logo}
