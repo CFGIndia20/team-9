@@ -3,6 +3,17 @@ import Button from '@material-ui/core/Button';
 import classe from './Task.module.css';
 import Grid from '@material-ui/core/Grid';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  useLocation,
+  IndexRoute,
+  Route,
+  Link,
+  Redirect,
+  useParams
+} from "react-router-dom";
+
 function displayHomeWorkList() {
     const list=[ "DiyaMaking",
                 "SoftSkills",
@@ -36,7 +47,7 @@ function displayHomeWorkList() {
                     </Grid>
                     <Grid item lg={6} md={6} sm={6} xs={6} >
 
-                      <Button color="primary" variant="contained" size="small" className={classe.list_item} key={index}>UPLOAD</Button>
+                      <Link to="/Post"><Button color="primary" variant="contained" size="small" className={classe.list_item} key={index}>UPLOAD</Button></Link>
                       </Grid>
 
   </Grid>

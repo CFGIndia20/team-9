@@ -1,5 +1,6 @@
 import React from 'react';
 import classe from './Post.module.css';
+import Grid from '@material-ui/core/Grid';
 
 function FileUpload() {
     return (
@@ -8,8 +9,6 @@ function FileUpload() {
                 <div>
                     <div>
                         <br /><br />
-
-                            <h3 className={classe.uploadFile}>Upload File</h3>
                             <br />
                             <div>
                                 <div className={classe.uploadFile}>

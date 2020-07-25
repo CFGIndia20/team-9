@@ -1,22 +1,22 @@
-import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,save_uid} from '../actions/types';
+import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,HOMEWORK,PRODUCTTASK} from '../actions/types';
 
 const initialState = {
   
   loggedin:{
-    status:'error',
+    success:false,
   },
   register_:{
-    // success:true,
-    // status:'success',
-    status:'error',
+    success:false,
   },
-  userid:'',
   profile_created:{
-    // success:false,
-    status:'error',
+    success:false,
+  },
+  homework:[
+    
+  ],
+  producttask:[
 
-  }
-  
+  ],
 };
 
 export default function(state = initialState, action) {
@@ -27,7 +27,6 @@ export default function(state = initialState, action) {
       return {
         ...state,
         loggedin: action.payload,
-        // userid:action.payload.
       };
       case REGISTER:
       return {
@@ -37,8 +36,7 @@ export default function(state = initialState, action) {
       case CLEAR_REGISTRATION:
       return {
         ...state,
-        register_:{
-          status: 'error',}
+        register_: false,
       };
       case CREATE_PROFILE:
       return {
@@ -48,16 +46,19 @@ export default function(state = initialState, action) {
       case ccp:
         return {
           ...state,
-          profile_created:{
-            status: 'error',}
+          profile_created:false,
         };
-        case save_uid:
+      case HOMEWORK:
         return {
           ...state,
-          userid:action.payload,
+          homework:[action.payload],
         };
-      
-      
+      case PRODUCTTASK:
+        return {
+          ...state,
+          producttask:[action.payload],
+        }
+          
     default:
       return state;
   }

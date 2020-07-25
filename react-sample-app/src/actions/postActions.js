@@ -1,4 +1,4 @@
-import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,save_uid } from './types';
+import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,save_uid,HOMEWORK,PRODUCTTASK} from './types';
 import axios from 'axios';
 import { useRadioGroup } from '@material-ui/core';
 
@@ -85,4 +85,34 @@ export const create_pro = (state) => dispatch => {
       })
     );
 };
+
+export const get_Homeworktasks = (uid) => dispatch => {
+  var s = {
+     'userId': uid,
+  }
+
+  axios.get(`https://us-central1-cfg2020-dca44.cloudfunctions.net/Express/user/homework`,s)
+    .then(response =>
+      dispatch({
+        type: HOMEWORK,
+        payload: response.data,
+      })
+    );
+};
+
+export const get_ProductTasks = (uid) => dispatch => {
+  var s = {
+     'userId': uid,
+  }
+
+  axios.get(`https://us-central1-cfg2020-dca44.cloudfunctions.net/Express/user/tasks`,s)
+    .then(response =>
+      dispatch({
+        type: PRODUCTTASK,
+        payload: response.data,
+      })
+    );
+};
+
+
 
