@@ -1,0 +1,109 @@
+  .pad{
+    /* padding:1%; */
+  }
+  .links{
+    /* float: right; */
+    padding-left: 3%;
+    padding-top: 1%;
+
+  }
+
+  .but{
+    background-color: white;
+  }
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  /* padding:5%; */
+  /* padding-left: 10%; */
+  padding-top: 3%;
+
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #FFFFFF;
+  border-right: none;
+  padding: 5px;
+  /* height: 20px; */
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: black;
+}
+
+.searchTerm:focus{
+  color: blue;
+}
+
+.searchButton {
+  width: 8%;
+  /* height: 36px; */
+  border: 1px solid #FFFFFF;
+  background: #0F52BA;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.searchsmall {
+  width: 90%;
+  position: relative;
+  display: flex;
+  /* padding:5%; */
+  padding-left: 5%;
+}
+.disblock{
+
+}
+.searchButtonsmall {
+  width: 20%;
+  /* height: 36px; */
+  border: 1px solid #FFFFFF;
+  background: #0F52BA;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.mimimopad{
+  padding-left: 5%;
+}
+.logo{
+  /* padding-left: 5%; */
+  color:white;
+}
+
+.listing-property{
+  visibility: hidden;
+}
+
+.click_me{
+  visibility: hidden;
+}
+
+.img{
+  height: 30px;
+  width: 83px;
+  padding-left: 5%;
+  padding-top: 5%;
+
+}
+.imgsmall{
+  height: 30px;
+  width: 83px;
+  padding-top: 5%;
+
+}
+
+.login{
+  /* float:right; */
+  /* position: relative; */
+  padding-left: 40%;
+  padding-top: 5%;
+  
+}
