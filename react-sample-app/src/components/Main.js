@@ -36,6 +36,9 @@ import Home from './Home';
 import Login from './Login';
 import Contact_us from './Contact_us';
 import Post from './Post';
+import Post_wra from './Post_wra';
+import FileUpload from './FileUpload';
+
 import DashBoard from './DashBoard';
 import HomeWork from './HomeWork';
 import ProductTask from './ProductTask';
@@ -100,10 +103,12 @@ class Main extends Component{
                 <Route exact path='/AdminDashboard/assigntask' component={AssignTask} />
                 <Route exact path='/AdminDashboard/assignhomework' component={AssignHomework} />
                 <Route exact path='/Login' component={Login} />
-                <Route exact path='/Post' component={Post}/>
+                <Route exact path='/Post' component={Post_wra}/>
                 <Route exact path='/DashBoard' component={DashBoard}/>
                 <Route exact path='/HomeWork' component={HomeWork}/>
                 <Route exact path='/ProductTask' component={ProductTask}/>
+                <Route exact path='/FileUpload' component={FileUpload}/>
+
 
                 <Grid item   lg={12} md={12}>
 

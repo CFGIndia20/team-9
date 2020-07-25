@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       '& .MuiTextField-root': {
         margin: theme.spacing(3),
-        width: '100ch',
+        width: '100%',
       },
     },
   }));
@@ -18,6 +18,7 @@ function Post(props) {
     const classes = useStyles();
     const [value,setValue] = useState("");
     const handleChange = (event) => {
+      console.log(event.target.value);
         setValue(event.target.value);
     }
 
