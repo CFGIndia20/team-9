@@ -149,7 +149,7 @@ query.once("value", function(snapshot) {
 });
 })
 
-app.get('/tasks/',(req,res)=>{
+app.post('/tasks',(req,res)=>{
     let ref = admin.firestore();
     var tasks =[]
     var id = req.body.userId;
@@ -196,7 +196,7 @@ app.get('/tasks/',(req,res)=>{
     
 })
 
-app.get('/homework',(req,res)=>{
+app.post('/homework',(req,res)=>{
 
     let ref = admin.firestore();
     var tasks =[]
