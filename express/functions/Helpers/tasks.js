@@ -61,14 +61,20 @@ app.post("/dailyUpdate",multer.single("upload-file"),async (req,res)=>{
 app.get('/admin/assign/', (req, res) => {
     var users = [];
     let ref = admin.firestore();
+    var ids = req.body.userId;
     ref.collection("users").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            let data = doc.data();
-            var user = {};
-            user.id = doc.id;
-            user.name = data.name;
-            user.availability = data.timeAvail
-            users.push(user);
+            for(id of ids){
+                if(id==doc.id){
+                    let data = doc.data();
+                    var user = {};
+                    user.id = doc.id;
+                    user.name = data.name;
+                    user.availability = data.timeAvail
+                    users.push(user);
+                }
+            }
+           
         })
         console.log(users);
         return res.status(200).json(users);
