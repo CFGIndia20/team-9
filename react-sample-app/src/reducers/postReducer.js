@@ -1,11 +1,16 @@
-import { FETCH_POSTS, NEW_POST,GET_PROPERTY,LOGIN,VERIFY_OTP,REGISTER,CLEAR,UPDATE_DATA,TOKEN_ID,
-  LOGOUT,GET_DETAILS,SERVICE_WITH_ID,service_nextTokens,service_availability,service_prosCovered ,service_bookSlot,clear_service_booking } from '../actions/types';
+import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp} from '../actions/types';
 
 const initialState = {
   
   loggedin:{
     success:false,
   },
+  register_:{
+    success:true,
+  },
+  profile_created:{
+    success:false,
+  }
   
 
 
@@ -18,8 +23,28 @@ export default function(state = initialState, action) {
       case LOGIN:
       return {
         ...state,
-        loggedin: action.payload
+        loggedin: action.payload,
       };
+      case REGISTER:
+      return {
+        ...state,
+        register_: action.payload,
+      };
+      case CLEAR_REGISTRATION:
+      return {
+        ...state,
+        register_: false,
+      };
+      case CREATE_PROFILE:
+      return {
+        ...state,
+        profile_created: action.payload,
+      };
+      case ccp:
+        return {
+          ...state,
+          profile_created:false,
+        };
       
       
     default:
