@@ -149,22 +149,48 @@ query.once("value", function(snapshot) {
 });
 })
 
-app.get('/tasks',(req,res)=>{
+app.get('/tasks/',(req,res)=>{
     let ref = admin.firestore();
     var tasks =[]
+    var id = req.body.userId;
+    console.log(id);
+    ref.collection("users").doc(id).get().then(function(doc)  {
    
-    ref.collection("work").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-        let data = doc.data();
-        var task = {};
-        task.id= doc.id;
-        task.name = data.name;
-        task.desc = data.desc;
-        tasks.push(task);
-        console.log(tasks);
-    })
-        console.log(tasks);
-        return res.status(200).json(tasks);
+        if(id==doc.id){
+            let data = doc.data();
+            let tasks = data.tasks;
+            console.log(doc.data());
+           
+                //console.log(task1);
+                ref.collection("work").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc2) => {
+                        //console.log(doc2.id);
+                     for(task1 of tasks){
+                        if(doc2.id==task1){
+                            let data2 = doc2.data();
+                            //console.log(doc2.data());
+                                var task = {};
+                                task.id= doc2.id;
+                                task.name = data2.name;
+                                task.desc = data2.desc;
+                                tasks.push(task);
+                                console.log(tasks);
+                                return res.status(200).json(tasks);
+                            }
+                     }
+                     
+                    
+                    })
+                })
+                //console.log(tasks);
+            
+            
+            
+        }
+       
+
+        //console.log(tasks);
+       
     })
     
 })
