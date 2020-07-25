@@ -1,0 +1,22 @@
+.left {
+    margin-top: 150px;
+    text-align: center;
+}
+
+.text-field {
+    
+}
+
+.uploadFile {
+    margin-left: 36em;
+}
+
+.button {
+    background-color: blue;
+    color: white;
+    height: 50px;
+    width: 100px;
+    margin-left: 42em;
+    margin-top: 20px;
+    font-size: medium;
+}

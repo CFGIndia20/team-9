@@ -35,6 +35,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Home from './Home';
 import Login from './Login';
 import Contact_us from './Contact_us';
+import Post from './Post';
 import classes from './Main.module.css' ;
 
 
@@ -89,7 +90,7 @@ class Main extends Component{
                 <Route exact path='/' component={Home} />
                 <Route exact path='/Contact' component={Contact_us} />
                 <Route exact path='/Login' component={Login} />
-                
+                <Route exact path='/Post' component={Post}/>
                 
                 <Grid item   lg={12} md={12}>
 
