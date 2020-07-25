@@ -242,6 +242,7 @@ render() {
       fullWidth
       variant="contained"
       color="primary"
+      style={{background:'#9e1f5f',color:'white'}}
       className={classe.submit}
       onClick={this.register_api}
     >
@@ -259,6 +260,7 @@ render() {
       fullWidth
       variant="contained"
       color="primary"
+      style={{background:'#9e1f5f',color:'white'}}
       className={classe.submit}
       onClick={this.login_api}
     >

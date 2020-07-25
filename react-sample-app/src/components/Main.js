@@ -101,7 +101,7 @@ class Main extends Component{
                 
                 <Grid item   lg={12} md={12}>
 
-                    <AppBar style={{ background: '#5C9AEE' }}>
+                    <AppBar style={{ background: '#9e1f5f' }}>
 
                         <Toolbar>
 

@@ -71,7 +71,7 @@ export class AssignTask extends Component {
                         </Form.Text>
                     </Form.Group>
 
-                    <Button type="submit">
+                    <Button type="submit" variant="secondary" style={{background:'#9e1f5f',color:'white'}}>
                         Submit
                     </Button>
                 </Form>

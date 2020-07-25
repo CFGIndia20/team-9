@@ -17,8 +17,8 @@ export class adminDashboard extends Component {
             <div>
                 <Container fluid>
                     <ButtonGroup aria-label="Basic example">
-                        <Button variant="primary" style={{margin:'50px'}}>Assign Task</Button>
-                        <Button variant="primary" style={{margin:'50px'}}>Assign HomeWork</Button>
+                        <Button variant="" style={{margin:'50px',background:'#9e1f5f',color:'white'}}>Assign Task</Button>
+                        <Button variant="" style={{margin:'50px',background:'#9e1f5f',color:'white'}}>Assign HomeWork</Button>
                     </ButtonGroup>
                 </Container>
             </div>
