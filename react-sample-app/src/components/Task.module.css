@@ -1,9 +1,13 @@
-.list_item {
-  width: 250px;
+/* .list_item {
+  width: 10%;
   height: 80px;
-  text-align: center;
+    background-color: gray;
+    text-align: center;
+} */
+.pad{
+  padding:10%;
+  
 }
-
 .heading {
     text-align: center;
     margin-top: 100px;

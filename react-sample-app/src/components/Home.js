@@ -53,6 +53,7 @@ import {
 
   componentWillMount() {
   console.log("home");
+  console.log(window.location.href);
 }
 
 

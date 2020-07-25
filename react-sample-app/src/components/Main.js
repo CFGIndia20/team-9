@@ -122,6 +122,13 @@ class Main extends Component{
                                 </Grid>
                                 <Grid item  md={6} lg={6} >
                                 <div >
+                                <Link to="/DashBoard" ><Button   >
+                                        <Typography 
+                                    className={classes.logo}
+                                    >
+                                            DashBoard
+                                        </Typography>
+                                </Button></Link>
                                 <Link to="/" ><Button   >
                                         <Typography 
                                     className={classes.logo}

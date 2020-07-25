@@ -1,4 +1,4 @@
-import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp} from '../actions/types';
+import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,save_uid} from '../actions/types';
 
 const initialState = {
   
@@ -9,9 +9,8 @@ const initialState = {
     // success:true,
     // status:'success',
     status:'error',
-
-
   },
+  userid:'',
   profile_created:{
     // success:false,
     status:'error',
@@ -28,6 +27,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         loggedin: action.payload,
+        // userid:action.payload.
       };
       case REGISTER:
       return {
@@ -50,6 +50,11 @@ export default function(state = initialState, action) {
           ...state,
           profile_created:{
             status: 'error',}
+        };
+        case save_uid:
+        return {
+          ...state,
+          userid:action.payload,
         };
       
       

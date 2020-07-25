@@ -1,4 +1,4 @@
-import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp } from './types';
+import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,save_uid } from './types';
 import axios from 'axios';
 import { useRadioGroup } from '@material-ui/core';
 
@@ -20,6 +20,7 @@ export const login = (no,pass) => dispatch => {
       type: LOGIN,
       payload: response.data
     })
+    // console.log(payload);
   );
   // axios.post(`https://test-dot-mimimo-react.appspot.com/api/web_login_user`,sendkey)
   //   .then(response =>
@@ -30,6 +31,13 @@ export const login = (no,pass) => dispatch => {
   //   );
 };
 
+
+export const save_id = (id) => dispatch => {
+  dispatch({
+    type: save_uid,
+    payload: id,
+  })
+};
 
 export const register = (no,pass) => dispatch => {
   var s={
