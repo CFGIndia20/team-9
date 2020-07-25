@@ -1,20 +1,30 @@
-import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,save_uid} from '../actions/types';
+import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,save_uid,is_loggedin,homework_call,product_call,temp_id} from '../actions/types';
 
 const initialState = {
   
   loggedin:{
     status:'error',
   },
+  is_log:false,
   register_:{
     // success:true,
     // status:'success',
     status:'error',
   },
-  userid:'',
+  userid:'pRMNaYBe5UShwPmxKxA1CppKgO',
   profile_created:{
     // success:false,
     status:'error',
+  },
+  home_call:[
+    {
 
+    }
+  ],
+  prod_call:[],
+  temp:{
+    tid:'',
+    mode:'',
   }
   
 };
@@ -22,7 +32,30 @@ const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
     
-     
+      case is_loggedin:
+      return {
+        ...state,
+        is_log: action.payload,
+        // userid:action.payload.
+      };
+      case temp_id:
+      return {
+        ...state,
+        temp: action.payload,
+        // userid:action.payload.
+      };
+      case homework_call:
+      return {
+        ...state,
+        home_call: [action.payload],
+        // userid:action.payload.
+      };
+      case product_call:
+      return {
+        ...state,
+        prod_call: [action.payload],
+        // userid:action.payload.
+      };
       case LOGIN:
       return {
         ...state,

@@ -58,9 +58,13 @@ import {
 import { connect } from 'react-redux';
 import Attendance from './Attendance';
 import adminDashboard from './adminDashboard';
+<<<<<<< HEAD
 import updateProfileAdmin from './updateProfileAdmin';
 import updateProfileUser from './updateProfileUser';
 // import { } from '../actions/postActions';
+=======
+import { } from '../actions/postActions';
+>>>>>>> 7909d56ef33e6cc62cca9a592359382cc89bc0aa
 
 
 
@@ -148,7 +152,7 @@ class Main extends Component{
                                 </Button></Link>
 
                                 {
-                                this.props.loggedin.status=='success' ?
+                                this.props.loggedin.status=='success' || this.props.is_log  ?
                                 <span>hey</span>
                                     
                                     :
@@ -185,7 +189,7 @@ class Main extends Component{
 
 const mapStateToProps = state => ({
   loggedin: state.data.loggedin,
-
+  is_log: state.data.is_log,
   
 });
 
