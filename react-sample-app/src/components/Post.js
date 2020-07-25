@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 function Post(props) {
-    
+
     const classes = useStyles();
     const [value,setValue] = useState("");
     const handleChange = (event) => {
@@ -31,7 +31,7 @@ function Post(props) {
                   rows={4}
                   value={value}
                   onChange={handleChange}
-                  placeholder="Enter your experience"></TextField>
+                  placeholder="Enter your experience"/>
             </div>
             <div>
                 <FileUpload/>
