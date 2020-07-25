@@ -1,7 +1,7 @@
 const  express = require("express")
 const admin = require("firebase-admin")
 const firebase = require("firebase-functions")
-const adminJson = require("./functions/admin.json")// download this json from firebase service accounts panel
+const adminJson = require("./admin.json")// download this json from firebase service accounts panel
 const bodyParser = require("body-parser")
 
 

@@ -4,5 +4,5 @@ Team*.zip
 *.crt
 *.key
 *.ovpn
-/express/admin.json
+/express/functions/admin.json
 /node_modules
