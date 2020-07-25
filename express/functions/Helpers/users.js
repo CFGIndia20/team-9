@@ -174,13 +174,13 @@ app.get('/tasks/',(req,res)=>{
                                 task.name = data2.name;
                                 task.desc = data2.desc;
                                 tasks.push(task);
-                                console.log("1",tasks);
+                                
                                 return res.status(200).json(tasks);
                             }
-                            console.log("2",tasks);
+                            
                      }
                      
-                     console.log("3",tasks);
+                     
                     })
                 })
                 //console.log(tasks);
@@ -222,13 +222,13 @@ app.get('/homework',(req,res)=>{
                                 task.name = data2.name;
                                 task.desc = data2.desc;
                                 tasks.push(task);
-                                console.log("1",tasks);
+                                
                                 return res.status(200).json(tasks);
                             }
-                            console.log("2",tasks);
+                            
                     }
                      
-                     console.log("3",tasks);
+                    
                     })
                 })
                 //console.log(tasks);
