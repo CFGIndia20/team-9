@@ -42,6 +42,7 @@ app.post("/dailyUpdate",multer.single("upload-file"),async (req,res)=>{
                     "status":"success",
                     "url":url
                 })
+                admin.firestore().doc(`work/${taskId}/updates/${updateId}`).set({"url":url},{merge:true})
             }).catch((err)=>{
                 console.log("error "+JSON.stringify(err))
                 res.send({

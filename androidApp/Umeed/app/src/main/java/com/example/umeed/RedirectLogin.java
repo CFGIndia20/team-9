@@ -23,12 +23,7 @@ public class RedirectLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_redirect_login);
-
-        if(FirebaseAuth.getInstance().getCurrentUser()==null){
-            login();
-        }else{
-            displayReact();
-        }
+        displayReact();
     }
 
 

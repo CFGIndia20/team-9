@@ -156,19 +156,22 @@ app.post('/tasks',(req,res)=>{
     var tasks =[]
     var id = req.body.userId;
     console.log(id);
+
+
     ref.collection("users").doc(id).get().then(function(doc)  {
-   
-        if(id==doc.id){
+
+        if(id===doc.id){
             let data = doc.data();
+            console.log(data)
             let tasks = data.tasks;
             console.log(doc.data());
-           
+
                 //console.log(task1);
                 ref.collection("work").get().then((querySnapshot) => {
                     querySnapshot.forEach((doc2) => {
                         //console.log(doc2.id);
                      for(task1 of tasks){
-                        if(doc2.id==task1){
+                        if(doc2.id===task1){
                             let data2 = doc2.data();
                             //console.log(doc2.data());
                                 var task = {};
@@ -176,21 +179,26 @@ app.post('/tasks',(req,res)=>{
                                 task.name = data2.name;
                                 task.desc = data2.desc;
                                 tasks.push(task);
-                                
+
                                 return res.status(200).json(tasks);
                             }
-                            
+
                      }
-                     
-                     
+
+
+                    })
+                }).catch((err)=>{
+                    res.status(500).send({
+                        "status":"error",
+                        "error":JSON.stringify(err)
                     })
                 })
                 //console.log(tasks);
-            
-            
-            
+
+
+
         }
-       
+
 
         //console.log(tasks);
        
