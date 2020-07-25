@@ -37,7 +37,8 @@ import Login from './Login';
 import Contact_us from './Contact_us';
 import Post from './Post';
 import classes from './Main.module.css' ;
-
+import { AssignTask } from './assignTask';
+import { AssignHomework } from './assignHomework';
 
 
 
@@ -54,6 +55,7 @@ import {
 
 import { connect } from 'react-redux';
 import Attendance from './Attendance';
+import adminDashboard from './adminDashboard';
 // import { } from '../actions/postActions';
 
 
@@ -91,6 +93,9 @@ class Main extends Component{
                 <Route exact path='/' component={Home} />
                 <Route exact path='/Contact' component={Contact_us} />
                 <Route exact path='/Attendance' component={Attendance} />
+                <Route exact path='/AdminDashboard' component={adminDashboard} />
+                <Route exact path='/AdminDashboard/assigntask' component={AssignTask} />
+                <Route exact path='/AdminDashboard/assignhomework' component={AssignHomework} />
                 <Route exact path='/Login' component={Login} />
                 <Route exact path='/Post' component={Post}/>
                 
