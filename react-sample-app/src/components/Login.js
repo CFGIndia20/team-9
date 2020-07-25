@@ -119,7 +119,7 @@ import {
 };
 register_api=()=>{
 console.log(this.state.phone_no,this.state.password);
-// this.props.register(this.state.phone_no,this.state.password);
+this.props.register(this.state.phone_no,this.state.password);
 
 };
  login_api= () => {
@@ -147,8 +147,17 @@ render() {
 
     return (
 <div>
+  {this.props.register_.error}
+{
+        // this.props.register_.success ?
+        this.props.loggedin.status=='success' ?
+        <Redirect to="/" />:
+        null
+}
       {
-        this.props.register_.success ?
+        // this.props.register_.success ?
+        this.props.register_.status=='success' ?
+
         <div>
         <Create_profile />
           </div>

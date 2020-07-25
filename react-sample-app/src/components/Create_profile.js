@@ -77,6 +77,9 @@ submit=()=>{
         // console.log("error");
         alert("select a location");
     }
+    else{
+        this.props.create_pro(this.state); 
+    }
     console.log(this.state);
 
     // this.props.update_data(this.state);
@@ -97,9 +100,16 @@ render() {
 
     return (
         <div>
+             {/* {
+        // this.props.register_.success ?
+        this.props.register_.status=='success' ?
+        <Redirect to="/" />:
+    
+    null         
+    } */}
             {
-  this.props.profile_created.success ?
-  <Redirect to="/" />
+  this.props.profile_created.status=='success' ?
+  <Redirect to="/Login" />
   :
         <div>
             <br/>
@@ -164,9 +174,9 @@ render() {
                 }}
                 >
                 <option aria-label="None" value="" />
-                <option value={10}>Mumbai</option>
-                <option value={20}>Bangalore</option>
-                <option value={30}>Chennai</option>
+                <option value={'Mumbai'}>Mumbai</option>
+                <option value={'Bangalore'}>Bangalore</option>
+                <option value={'Chennai'}>Chennai</option>
                 </Select>
          </FormControl>
 
