@@ -1,31 +1,23 @@
 import React from 'react';
 import classe from './Post.module.css';
-import Grid from '@material-ui/core/Grid';
+import { Row } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 function FileUpload() {
     return (
-       <div>
-           <div>
-                <div>
-                    <div>
-                        <br /><br />
-                            <br />
-                            <div>
-                                <div className={classe.uploadFile}>
-                                    <label > Select File : </label>
-                                    <input type="file" name="upload_file"/>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div>
-                                    <button className={classe.button} type="submit">Save</button>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-       </div>
+       <Container>
+                <Row>
+                    <label > Select File : </label>
+                    <input type="file" name="upload_file"/>
+                </Row>
+                
+                <Row>
+                    <Button type="submit" variant="secondary" style={{margin:'20px',background:'#9e1f5f',color:'white'}}>
+                        Submit
+                    </Button>
+                </Row>
+        </Container>
     );
 }
 
