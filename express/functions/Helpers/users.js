@@ -130,6 +130,8 @@ query.once("value", function(snapshot) {
     });
 });
 })
+
+
 app.post("/setSkillsRole",(req,res)=>{
     const ref =admin.firestore()
     var query = ref.collection("users").orderByChild("name").equalTo(req.body.name);
