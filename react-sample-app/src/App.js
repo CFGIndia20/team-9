@@ -11,6 +11,7 @@ import Main from './components/Main';
 import Grid from '@material-ui/core/Grid';  
 import Button from '@material-ui/core/Button';
 // import Property_detail from './components/Property_detail';
+import 'bootstrap/dist/css/bootstrap.min.css';      //For bootstrap
 
 
 import {
