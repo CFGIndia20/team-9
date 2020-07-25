@@ -6,7 +6,7 @@ const initialState = {
     success:false,
   },
   register_:{
-    success:true,
+    success:false,
   },
   profile_created:{
     success:false,
