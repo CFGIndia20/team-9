@@ -132,6 +132,21 @@ query.once("value", function(snapshot) {
 })
 
 
+app.post('/profile',(req,res)=>{
+    var id = req.body.userId;
+    const ref =admin.firestore()
+    ref.collection("users").doc(id).get().then(function(doc)  {
+        var data = doc.data()
+        var profile ={}
+        profile.name = data.name;
+        profile.location = data.location;
+        profile.role = data.role;
+        profile.timeAvail = data.timeAvail;
+
+        return res.status(200).json(profile);
+    })
+})
+
 app.post("/setSkillsRole",(req,res)=>{
     const ref =admin.firestore()
     var query = ref.collection("users").orderByChild("name").equalTo(req.body.name);
