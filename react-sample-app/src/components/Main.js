@@ -61,13 +61,10 @@ import {
 import { connect } from 'react-redux';
 import Attendance from './Attendance';
 import adminDashboard from './adminDashboard';
-<<<<<<< HEAD
 import updateProfileAdmin from './updateProfileAdmin';
 import updateProfileUser from './updateProfileUser';
 // import { } from '../actions/postActions';
-=======
 import { } from '../actions/postActions';
->>>>>>> 7909d56ef33e6cc62cca9a592359382cc89bc0aa
 
 
 
