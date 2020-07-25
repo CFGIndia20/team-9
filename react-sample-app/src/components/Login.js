@@ -27,9 +27,10 @@ import clsx from 'clsx';
 import classe from './Login.module.css' ;
 // import Register from './Register' ;
 import { createStore, applyMiddleware, compose } from 'redux';
+import Create_profile from './Create_profile';
 
 import { connect } from 'react-redux';
-import { login } from '../actions/postActions';
+import { login,register } from '../actions/postActions';
 
 import {
   BrowserRouter as Router,
@@ -117,12 +118,12 @@ import {
   event.preventDefault();
 };
 register_api=()=>{
-// console.log(this.state.phone_no,this.state.password);
+console.log(this.state.phone_no,this.state.password);
 // this.props.register(this.state.phone_no,this.state.password);
 
 };
  login_api= () => {
-  console.log(this.state);
+  // console.log(this.state);
   this.props.login(this.state.phone_no,this.state.password);
 
   
@@ -145,6 +146,13 @@ render() {
   // const classes = useStyles();
 
     return (
+<div>
+      {
+        this.props.register_.success ?
+        <div>
+        <Create_profile />
+          </div>
+          :
         <div>
     
 <Grid container>
@@ -219,7 +227,7 @@ render() {
     <br/>
   </Grid>
     </Grid>
-{/* 
+
   <Button
       type="submit"
       fullWidth
@@ -229,7 +237,7 @@ render() {
       onClick={this.register_api}
     >
       REGISTER
-    </Button> */}
+    </Button>
 
     <Grid container>
     <Grid item lg={12} md={12} sm={12} xs={12} >
@@ -251,9 +259,9 @@ render() {
 
     <Grid container>
       <Grid item xs>
-        <Link href="#" variant="body2">
-          Forgot password?
-        </Link>
+        {/* <Link href="#" variant="body2"> */}
+          {/* Forgot password? */}
+        {/* </Link> */}
       </Grid>
       </Grid>
 
@@ -265,15 +273,18 @@ render() {
 
         </div>
 
+
+  }
+  </div>
         );
         }
 
     }
 
     const mapStateToProps = state => ({
-      // trading: state.data.item,
-      // newPost: state.posts.item
+      register_: state.data.register_,
+      loggedin: state.data.loggedin,
       
     });
 
-    export default connect(mapStateToProps,{login})(Login);
+    export default connect(mapStateToProps,{login,register})(Login);

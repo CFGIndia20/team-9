@@ -27,7 +27,6 @@ import clsx from 'clsx';
 import classe from './Login.module.css' ;
 import { connect } from 'react-redux';
 import { fetchPosts,get_property,login,verify_otp,register,clear } from '../actions/postActions';
-
 import {
   BrowserRouter as Router,
   Switch,

@@ -40,6 +40,10 @@ import DashBoard from './DashBoard';
 import HomeWork from './HomeWork';
 import ProductTask from './ProductTask';
 import classes from './Main.module.css' ;
+import { AssignTask } from './assignTask';
+import { AssignHomework } from './assignHomework';
+
+
 
 import {
   BrowserRouter as Router,
@@ -53,6 +57,8 @@ import {
 } from "react-router-dom";
 
 import { connect } from 'react-redux';
+import Attendance from './Attendance';
+import adminDashboard from './adminDashboard';
 // import { } from '../actions/postActions';
 
 
@@ -89,6 +95,10 @@ class Main extends Component{
 
                 <Route exact path='/' component={Home} />
                 <Route exact path='/Contact' component={Contact_us} />
+                <Route exact path='/Attendance' component={Attendance} />
+                <Route exact path='/AdminDashboard' component={adminDashboard} />
+                <Route exact path='/AdminDashboard/assigntask' component={AssignTask} />
+                <Route exact path='/AdminDashboard/assignhomework' component={AssignHomework} />
                 <Route exact path='/Login' component={Login} />
                 <Route exact path='/Post' component={Post}/>
                 <Route exact path='/DashBoard' component={DashBoard}/>
@@ -103,19 +113,12 @@ class Main extends Component{
 
                                 <Grid container>
                                 <Grid item  md={2} lg={2} >
+                                </Grid>
+                                <Grid item  md={2} lg={2} >
                                 logo
                                 {/* <img className={classes.img} src={require('./resource/uploads/2020/02/logo-1-uai-258x93.png')} /> */}
                                 </Grid>
-                                <Grid item  md={4} lg={4} >
-                                        search
-                                        {/* <div className={classes.search}>
-
-                                        <input type="text"  placeholder="Search.."  className={classes.searchTerm}  onChange={this.changehandler} ></input>
-                                        <button onClick={this.formSub} className={classes.searchButton}>
-                                            <i className="fa fa-search"></i>
-                                        </button>
-
-                                        </div> */}
+                                <Grid item  md={2} lg={2} >
                                 </Grid>
                                 <Grid item  md={6} lg={6} >
                                 <div >
@@ -134,16 +137,23 @@ class Main extends Component{
                                         </Typography>
                                 </Button></Link>
 
-                                    <span>
+                                {
+                                this.props.loggedin.success ?
+                                <span>hey</span>
+                                    
+                                    :
+                                <span>
                                     <Link to="/Login">
                                     <Button  >
-
+                                    
                                     <Typography 
                                     className={classes.logo}
                                     >Login</Typography>
                                     </Button>
+                                    
                                     </Link>  
                                     </span>
+                                }
 
                                 </div>
 
@@ -164,6 +174,8 @@ class Main extends Component{
 
 
 const mapStateToProps = state => ({
+  loggedin: state.data.loggedin,
+
   
 });
 
