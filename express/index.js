@@ -8,10 +8,13 @@ const bodyParser = require("body-parser")
 const helper_tasks = require("./Helpers/tasks")
 
 
-admin.initializeApp({
-    credential: admin.credential.cert(adminJson),
-    databaseURL: "https://cfg2020-dca44.firebaseio.com"
-});
+if (!module.parent){
+    admin.initializeApp({
+        credential: admin.credential.cert(adminJson),
+        databaseURL: "https://cfg2020-dca44.firebaseio.com"
+    });
+}
+
 const app = express()
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.json())
@@ -19,8 +22,15 @@ app.use(express.json())
 
 app.use("/tasks",helper_tasks)
 
+app.use("/",(req,res)=>{
+    res.send("This works")
+})
 
 
-app.listen(5000,()=>{
-    console.log("listening")
-});
+if (!module.parent){
+    app.listen(5000,()=>{
+        console.log("listening")
+    });
+}
+
+module.exports = app
