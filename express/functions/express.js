@@ -6,6 +6,7 @@ const bodyParser = require("body-parser")
 
 
 const helper_tasks = require("./Helpers/tasks")
+const helper_user = require("./Helpers/users")
 
 
 if (!module.parent){
@@ -21,6 +22,8 @@ app.use(express.json())
 
 
 app.use("/tasks",helper_tasks)
+
+app.use("/user",helper_user)
 
 app.use("/",(req,res)=>{
     res.send("This works")
