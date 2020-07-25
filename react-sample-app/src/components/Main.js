@@ -138,7 +138,7 @@ class Main extends Component{
                                 </Button></Link>
 
                                 {
-                                this.props.loggedin.success ?
+                                this.props.loggedin.status=='success' ?
                                 <span>hey</span>
                                     
                                     :

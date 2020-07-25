@@ -3,17 +3,21 @@ import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp} from '../actions/
 const initialState = {
   
   loggedin:{
-    success:false,
+    status:'error',
   },
   register_:{
-    success:false,
+    // success:true,
+    // status:'success',
+    status:'error',
+
+
   },
   profile_created:{
-    success:false,
+    // success:false,
+    status:'error',
+
   }
   
-
-
 };
 
 export default function(state = initialState, action) {
@@ -33,7 +37,8 @@ export default function(state = initialState, action) {
       case CLEAR_REGISTRATION:
       return {
         ...state,
-        register_: false,
+        register_:{
+          status: 'error',}
       };
       case CREATE_PROFILE:
       return {
@@ -43,7 +48,8 @@ export default function(state = initialState, action) {
       case ccp:
         return {
           ...state,
-          profile_created:false,
+          profile_created:{
+            status: 'error',}
         };
       
       
