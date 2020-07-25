@@ -1,7 +1,8 @@
-import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,is_loggedin,ccp,save_uid,homework_call } from './types';
+import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,is_loggedin,ccp,save_uid,homework_call,product_call,temp_id } from './types';
 import axios from 'axios';
 import { useRadioGroup } from '@material-ui/core';
-
+// axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
+// axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 // axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 export const login = (no,pass) => dispatch => {
   // var sendkey=new  FormData();
@@ -39,11 +40,49 @@ export const  log_in = (val) => dispatch => {
   })
 };
 
+export const te_id = (tid,mode) => dispatch => {
+  dispatch({
+    type: temp_id,
+    payload: {tid,mode},
+  })
+};
 export const save_id = (id) => dispatch => {
   dispatch({
     type: save_uid,
     payload: id,
   })
+};
+
+
+export const PC = (uid) => dispatch => {
+  console.log(uid);
+  var s={
+    'userId':uid,
+  }
+  console.log("useridddd",s);
+  // debugger;
+  axios.post('https://us-central1-cfg2020-dca44.cloudfunctions.net/Express/user/tasks',s)
+  .then(response =>
+    dispatch({
+      type: product_call,
+      payload: response.data,
+    })
+  );
+};
+export const HC = (uid) => dispatch => {
+  console.log(uid);
+  var s={
+    'userId':uid,
+  }
+  console.log(s);
+  // debugger;
+  axios.post('https://us-central1-cfg2020-dca44.cloudfunctions.net/Express/user/homework',s)
+  .then(response =>
+    dispatch({
+      type: homework_call,
+      payload: response.data,
+    })
+  );
 };
 
 export const register = (no,pass) => dispatch => {
