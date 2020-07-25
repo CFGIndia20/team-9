@@ -23,7 +23,7 @@ app.post("/signUp",async (req,res)=>{
     users.forEach((_)=>{
         res.send({
             "status":"error",
-            "error":"user already guess"
+            "error":"user already exists"
         })
         return
     })
@@ -153,7 +153,7 @@ app.get('/tasks',(req,res)=>{
     let ref = admin.firestore();
     var tasks =[]
    
-    ref.collection("tasks").get().then((querySnapshot) => {
+    ref.collection("work").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         let data = doc.data();
         var task = {};
@@ -161,6 +161,7 @@ app.get('/tasks',(req,res)=>{
         task.name = data.name;
         task.desc = data.desc;
         tasks.push(task);
+        console.log(tasks);
     })
         console.log(tasks);
         return res.status(200).json(tasks);
