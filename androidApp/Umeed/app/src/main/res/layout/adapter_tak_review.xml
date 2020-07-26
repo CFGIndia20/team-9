@@ -21,6 +21,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Description"
+                android:textColor="@color/colorPrimary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 android:id="@+id/descReview"
                 />
             <ImageView

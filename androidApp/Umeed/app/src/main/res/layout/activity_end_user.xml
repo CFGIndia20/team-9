@@ -16,37 +16,22 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/markAttendance"
+            android:id="@+id/viewTasks"
             android:background="@drawable/button_bg"
-            android:text="Mark Attendance"
+            android:text="View Tasks Assigned"
             android:textColor="#ffffff"
             android:layout_marginBottom="32dp"
             />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/distributeTasks"
+            android:id="@+id/moreInfo"
             android:layout_marginBottom="32dp"
             android:background="@drawable/button_bg"
-            android:text="Distribute Task"
+            android:text="More Info"
+            android:onClick="moreInfo"
             android:textColor="#ffffff"
             />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/dashBoard"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/button_bg"
-            android:text="Review Submissions"
-            android:textColor="#ffffff"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="redirect"
-            android:background="@drawable/button_bg"
-            android:text="End User"
-            android:textColor="#ffffff"
-            />
+
     </LinearLayout>
 </RelativeLayout>

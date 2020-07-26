@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.umeed.R;
+import com.example.umeed.RedirectLogin;
 
 public class ManagerOptions extends AppCompatActivity {
 
@@ -39,5 +40,10 @@ public class ManagerOptions extends AppCompatActivity {
             }
         });
     }
+
+    public void redirect(View view) {
+        startActivity(new Intent(ManagerOptions.this, RedirectLogin.class));
+    }
+
 
 }

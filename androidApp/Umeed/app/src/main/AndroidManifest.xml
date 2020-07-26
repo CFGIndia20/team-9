@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.TaskReviewBoard"></activity>
+        <activity android:name=".Activities.EndUserActivity"></activity>
+        <activity android:name=".Activities.AssignedTasks" />
+        <activity android:name=".Activities.TaskReviewBoard" />
         <activity android:name=".Activities.DistributeTask" />
         <activity android:name=".Activities.AllotTasks" />
         <activity android:name=".Activities.ManagerOptions" />
