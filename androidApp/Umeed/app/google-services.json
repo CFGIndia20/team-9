@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "138302400567",
+    "firebase_url": "https://cfg2020-dca44.firebaseio.com",
+    "project_id": "cfg2020-dca44",
+    "storage_bucket": "cfg2020-dca44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138302400567:android:bbdcb5f7a7d9363c3477b2",
+        "android_client_info": {
+          "package_name": "com.example.umeed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138302400567-tur1724uauu2dggp5n2df9752b5hepbr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.umeed",
+            "certificate_hash": "a03ff465bf0a35aab3c5cb7365e1c57140b1989e"
+          }
+        },
+        {
+          "client_id": "138302400567-p2rp5tlmmttp03jcnrcb7t6rn34bhl89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwy_IY6nfNr3GOV0AGzl7IBBrXcYRCFsQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "138302400567-p2rp5tlmmttp03jcnrcb7t6rn34bhl89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
