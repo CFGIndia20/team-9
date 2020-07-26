@@ -30,6 +30,14 @@ public class ManagerOptions extends AppCompatActivity {
                 ManagerOptions.this.startActivity(new Intent(ManagerOptions.this, DistributeTask.class));
             }
         });
+
+        Button dashboard = findViewById(R.id.dashBoard);
+        dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ManagerOptions.this.startActivity(new Intent(ManagerOptions.this, TaskReviewBoard.class));
+            }
+        });
     }
 
 }

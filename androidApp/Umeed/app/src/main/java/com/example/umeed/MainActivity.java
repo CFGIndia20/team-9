@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         if(FirebaseAuth.getInstance().getCurrentUser()==null){
             login();
         }else{
-            getUserType();
+            startActivity(new Intent(MainActivity.this,ManagerOptions.class));
         }
     }
 

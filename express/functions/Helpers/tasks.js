@@ -19,6 +19,8 @@ const multer = Multer({
 
 
 app.post("/dailyUpdate",multer.single("upload-file"),async (req,res)=>{
+    console.log(req.body)
+    debugger;
     const file = req.file
     const taskId = req.body.taskId;
     const desc = req.body.description;

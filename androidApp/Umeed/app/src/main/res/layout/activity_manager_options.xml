@@ -26,8 +26,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/distributeTasks"
+            android:layout_marginBottom="32dp"
             android:background="@drawable/button_bg"
             android:text="Distribute Task"
+            android:textColor="#ffffff"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dashBoard"
+            android:background="@drawable/button_bg"
+            android:text="Review Submissions"
             android:textColor="#ffffff"
             />
     </LinearLayout>

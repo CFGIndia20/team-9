@@ -60,6 +60,7 @@ public class DistributeTask extends AppCompatActivity {
                 updates.put("desc",desc.getText().toString());
                 updates.put("name",desc.getText().toString());
                 updates.put("hrs",Integer.parseInt(amt.getText().toString()));
+                updates.put("manager",FirebaseAuth.getInstance().getCurrentUser().getUid());
                 for (CheckBox checkBox : checkBoxes) {
                     if(checkBox.isChecked()){
                         updates.put("userId", checkBox.getTag().toString());
