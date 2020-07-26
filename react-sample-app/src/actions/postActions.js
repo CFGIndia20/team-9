@@ -57,6 +57,7 @@ export const save_id = (id) => dispatch => {
 
 export const upload_your_file = (id,mode,file,message) => dispatch => {
   console.log(id,mode,file,message);
+  console.log(mode);
   var sendkey=new  FormData();
   
   sendkey.append('upload-file',file);
@@ -64,13 +65,18 @@ export const upload_your_file = (id,mode,file,message) => dispatch => {
   sendkey.append('description',message);
   console.log(sendkey.get("file"));
   console.log(typeof(sendkey));
-
+    
   // headers={'Content-Type': 'multipart/form-data' };
  
-  // console.log(no,pass);
+  console.log(sendkey.entries());
+  for (var i of sendkey.entries()){
+    console.log(i);
+  }
 
-  if(mode=='product'){
+
+  // if(mode=='homework'){
     console.log('task');
+
       axios.post('https://us-central1-cfg2020-dca44.cloudfunctions.net/Express/task/dailyUpdate',sendkey,{
         headers: {
           'Content-Type': 'multipart/form-data'
@@ -82,10 +88,10 @@ export const upload_your_file = (id,mode,file,message) => dispatch => {
       payload: response.data,
     })
   );
-  }
-  else{
-    console.log('homework');
-  }
+  // }
+  // else{
+    console.log('product');
+  // }
   //   axios.post('https://us-central1-cfg2020-dca44.cloudfunctions.net/Express/user/tasks',s)
   // .then(response =>
   //   dispatch({

@@ -121,11 +121,14 @@ class Main extends Component{
                         <Toolbar>
 
                                 <Grid container>
-                                <Grid item  md={2} lg={2} >
+                                <Grid item  md={1} lg={1} >
                                 </Grid>
-                                <Grid item  md={2} lg={2} >
-                                logo
+                                <Grid item  md={3} lg={3} >
+                                {/* logo */}
                                 {/* <img className={classes.img} src={require('./resource/uploads/2020/02/logo-1-uai-258x93.png')} /> */}
+                                {/* <div className={classes}> */}
+                                <img  className={classes.img} src={require('./logo.png')} />
+                                {/* </div> */}
                                 </Grid>
                                 <Grid item  md={2} lg={2} >
                                 </Grid>
@@ -153,7 +156,7 @@ class Main extends Component{
                                         </Typography>
                                 </Button></Link> */}
 
-                                {
+                                {/* {
                                 this.props.loggedin.status=='success' || this.props.is_log  ?
                                 <span>hey</span>
                                     
@@ -169,7 +172,7 @@ class Main extends Component{
                                     
                                     </Link>  
                                     </span>
-                                }
+                                } */}
 
                                 </div>
 

@@ -43,11 +43,11 @@ class displayProductTaskList extends Component {
 
     // ];
         { 'id':"tlqFuShm7RhoLq0UoCBB",
-        'name': "DiyaMaking",
+        'name': "Diya",
         'desc':'Dia making with glitter',
     },
     { 'id':"id",
-    'name': "Embroidery",
+    'name': "Crockery",
     'desc':'some description',
 },  { 'id':"id",
 'name': "maintaining Budget",
