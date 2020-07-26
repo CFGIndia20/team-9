@@ -39,7 +39,7 @@ As it is rightly said, "Women are the pillars of society". Determination, suppor
 
 
 ### Tech Stack
-1) React
+1) React-Redux
 2) Firebase
 3) Express Js
 4) Android
