@@ -30,8 +30,16 @@ As it is rightly said, "Women are the pillars of society". Determination, suppor
   
   
 ### Future Scope
-1) Adding Localization 
-2)
-3)
+1) Adding Localization
+2) Geo Fence/Qr Code for attendance 
+3) Text to Speech for navigating the app
+4) Payment Integration with GPay/ Dunzo Integration
+5) Connecting women who reside in the same area for level one quality checks
+6) Upvote Downvote System for motivation
+
 
 ### Tech Stack
+1) React
+2) Firebase
+3) Express Js
+4) Android
