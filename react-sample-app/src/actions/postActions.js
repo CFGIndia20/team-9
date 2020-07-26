@@ -1,4 +1,5 @@
-import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,is_loggedin,ccp,save_uid,homework_call,product_call,temp_id } from './types';
+import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,is_loggedin,ccp,save_uid,homework_call,product_call,temp_id,upload
+  ,admin_ass,admin_work } from './types';
 import axios from 'axios';
 import { useRadioGroup } from '@material-ui/core';
 // axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
@@ -54,6 +55,79 @@ export const save_id = (id) => dispatch => {
 };
 
 
+export const upload_your_file = (id,mode,file,message) => dispatch => {
+  console.log(id,mode,file,message);
+  var sendkey=new  FormData();
+  
+  sendkey.append('upload-file',file);
+  sendkey.append('taskId',id);
+  sendkey.append('description',message);
+  console.log(sendkey.get("file"));
+  console.log(typeof(sendkey));
+
+  // headers={'Content-Type': 'multipart/form-data' };
+ 
+  // console.log(no,pass);
+
+  if(mode=='product'){
+    console.log('task');
+      axios.post('https://us-central1-cfg2020-dca44.cloudfunctions.net/Express/task/dailyUpdate',sendkey,{
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+    }) 
+  .then(response =>
+    dispatch({
+      type: upload,
+      payload: response.data,
+    })
+  );
+  }
+  else{
+    console.log('homework');
+  }
+  //   axios.post('https://us-central1-cfg2020-dca44.cloudfunctions.net/Express/user/tasks',s)
+  // .then(response =>
+  //   dispatch({
+  //     type: upload,
+  //     payload: response.data,
+  //   })
+  // );
+};
+
+
+export const aas = (state) => dispatch => {
+  console.log(state);
+  var s={
+    // 'userId':uid,
+  }
+  // console.log("useridddd",s);
+  // debugger;
+  console.log("task");
+  axios.post('https://us-central1-cfg2020-dca44.cloudfunctions.net/Express/user/tasks',s)
+  .then(response =>
+    dispatch({
+      type: admin_ass,
+      payload: response.data,
+    })
+  );
+};
+
+export const aaw = (uid) => dispatch => {
+  console.log(uid);
+  var s={
+    'userId':uid,
+  }
+  console.log("useridddd",s);
+  // debugger;
+  axios.post('https://us-central1-cfg2020-dca44.cloudfunctions.net/Express/user/tasks',s)
+  .then(response =>
+    dispatch({
+      type: admin_work,
+      payload: response.data,
+    })
+  );
+};
 export const PC = (uid) => dispatch => {
   console.log(uid);
   var s={

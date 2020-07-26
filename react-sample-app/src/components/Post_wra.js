@@ -28,7 +28,7 @@ import Post from './Post' ;
 
 import classe from './Login.module.css' ;
 import { connect } from 'react-redux';
-import { create_pro } from '../actions/postActions';
+import { create_pro,upload_your_file } from '../actions/postActions';
 import Select from '@material-ui/core/Select';
 import MultipleSelect from 'react-multiple-select-dropdown';
 import 'react-multiple-select-dropdown/dist/index.css';
@@ -50,13 +50,18 @@ import {
 
     constructor(props) {
       super(props);
-    //   this.handleChange=this.handleChange.bind(this);
-    //   this.submit=this.submit.bind(this);
+      this.handleChange=this.handleChange.bind(this);
+      this.submit=this.submit.bind(this);
+      this.onFileChange=this.onFileChange.bind(this);
+      this.fileData=this.fileData.bind(this);
+
 
 
     
 
       this.state={
+        name:'',
+        selectedFile: ''
 
 
       }
@@ -66,7 +71,63 @@ import {
   componentWillMount() {
   console.log("wra");
 }
+onFileChange = event => { 
+	
+	// Update the state 
+	// this.setState({ selectedFile: event.target.files[0] }); 
+  // console.log(this.state.selectedFile);
+  // console.log(event.target.files[0] );
+//   this.setState(prevState => ({
+//     selectedFile: prevState.selectedFile+event.target.files[0],
+//  }))
+//     console.log(this.state.selectedFile);
 
+this.setState({ selectedFile: event.target.files[0] }, () => { console.log(this.state.selectedFile) });
+
+  
+	}; 
+	
+	// On file upload (click the upload button) 
+
+fileData = () => { 
+	
+	if (this.state.selectedFile) { 
+		
+		return ( 
+		<div> 
+			<h2>File Details:</h2> 
+			<p>File Name: {this.state.selectedFile.name}</p> 
+			<p>File Type: {this.state.selectedFile.type}</p> 
+			<p> 
+			Last Modified:{" "} 
+			{this.state.selectedFile.lastModifiedDate.toDateString()} 
+			</p> 
+		</div> 
+		); 
+	} else { 
+		return ( 
+		<div> 
+			<br /> 
+			<h4>Choose before Pressing the Submit button</h4> 
+		</div> 
+		); 
+	} 
+	}; 
+handleChange = (prop) => (event) => {
+  // setValues({ ...values, [prop]: event.target.value });
+  this.setState({
+    ...this.state,
+    [prop]: event.target.value,
+  });
+};
+
+submit=()=>{
+  
+  // console.log(this.state);
+  console.log(this.props.temp.tid,this.props.temp.mode,this.state.selectedFile,this.state.name);
+  this.props.upload_your_file(this.props.temp.tid,this.props.temp.mode,this.state.selectedFile,this.state.name);
+  // this.props.update_data(this.state);
+}
 
 render() {
 
@@ -78,8 +139,17 @@ render() {
 <br/>
 <br/>
 <br/>
-
+{
+        // this.props.register_.success ?
+        this.props.file_uploaded.status=='success' ?
+        <span>
+          {/* {this.props.save_id(this.props.loggedin.uid)} */}
+        <Redirect to="/DashBoard" />
+        </span>
+        :
+        
 <Grid container>
+  {this.props.file_uploaded.status}
   <Grid item lg={4} md={4} sm={2} xs={2} >
   </Grid>
 
@@ -87,18 +157,41 @@ render() {
 
         {/* <Post/> */}
         <TextField
-          id="outlined-multiline-static"
-          label="Multiline"
-          multiline
-          rows={4}
-          defaultValue="Default Value"
-          variant="outlined"
-        />
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            label="share your exp"
+            defaultValue={this.state.name}
+            autoFocus
+            onChange={this.handleChange('name')}
+            />
 
+<div> 
+				<input type="file" onChange={this.onFileChange} /> 
+				{/* <button onClick={this.onFileUpload}> 
+				Upload! 
+				</button>  */}
+			</div> 
+		{this.fileData()} 
+
+            <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                //   className={classe.submit}
+                onClick={this.submit}
+                >
+                SUBMIT
+                </Button>
+                    
   </Grid>
   <Grid item lg={4} md={4} sm={2} xs={2} >
   </Grid>
   </Grid>
+    
+    }
     </div>
         );
         }
@@ -106,9 +199,11 @@ render() {
     }
 
     const mapStateToProps = state => ({
-        // profile_created: state.data.profile_created,
+      temp: state.data.temp,
+      file_uploaded: state.data.file_uploaded,
+
       // newPost: state.posts.item
       
     });
 
-    export default connect(mapStateToProps,{})(Post_wra);
+    export default connect(mapStateToProps,{upload_your_file})(Post_wra);

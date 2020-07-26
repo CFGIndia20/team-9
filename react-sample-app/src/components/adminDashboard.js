@@ -24,6 +24,9 @@ export class adminDashboard extends Component {
                     <Link to="/AdminDashboard/assignhomework">
                         <Button variant="" style={{margin:'50px',background:'#9e1f5f',color:'white'}}>Assign HomeWork</Button>
                         </Link>
+                        <Link to="/Attendance">
+                        <Button variant="" style={{margin:'50px',background:'#9e1f5f',color:'white'}}>Attendance</Button>
+                        </Link>
                     </ButtonGroup>
                 </Container>
             </div>

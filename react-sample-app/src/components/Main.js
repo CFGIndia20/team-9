@@ -145,13 +145,13 @@ class Main extends Component{
                                             Home
                                         </Typography>
                                 </Button></Link>
-                                <Link to="/Contact"><Button   >
+                                {/* <Link to="/Contact"><Button   >
                                         <Typography 
                                     className={classes.logo}
                                     >
                                             Contact us
                                         </Typography>
-                                </Button></Link>
+                                </Button></Link> */}
 
                                 {
                                 this.props.loggedin.status=='success' || this.props.is_log  ?

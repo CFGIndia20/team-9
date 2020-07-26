@@ -1,4 +1,4 @@
-import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,save_uid,is_loggedin,homework_call,product_call,temp_id} from '../actions/types';
+import { LOGIN,REGISTER,CLEAR_REGISTRATION,CREATE_PROFILE,ccp,save_uid,is_loggedin,homework_call,product_call,temp_id,upload,admin_ass,admin_work} from '../actions/types';
 
 const initialState = {
   
@@ -11,7 +11,7 @@ const initialState = {
     // status:'success',
     status:'error',
   },
-  userid:'pRMNaYBe5UShwPmxKxA1CppKgO',
+  userid:'',
   profile_created:{
     // success:false,
     status:'error',
@@ -25,7 +25,14 @@ const initialState = {
   temp:{
     tid:'',
     mode:'',
-  }
+  },
+  file_uploaded:{},
+  admin_a:{
+    status:'error',
+  },
+  admin_w:{
+    status:'error',
+  },
   
 };
 
@@ -38,6 +45,26 @@ export default function(state = initialState, action) {
         is_log: action.payload,
         // userid:action.payload.
       };
+
+      case admin_ass:
+        return {
+          ...state,
+          admin_a: action.payload,
+          // userid:action.payload.
+        };
+        case admin_work:
+        return {
+          ...state,
+          admin_w: action.payload,
+          // userid:action.payload.
+        };
+      case upload:
+      return {
+        ...state,
+        file_uploaded: action.payload,
+        // userid:action.payload.
+      };
+
       case temp_id:
       return {
         ...state,

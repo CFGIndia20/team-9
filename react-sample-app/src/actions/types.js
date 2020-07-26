@@ -8,6 +8,12 @@ export const homework_call = 'homework_call';
 export const product_call = 'product_call';
 export const is_loggedin = 'is_loggedin';
 export const temp_id = 'temp_id';
+export const upload = 'upload';
+export const admin_ass = 'admin_ass';
+export const admin_work = 'admin_work';
+
+
+
 
 
 

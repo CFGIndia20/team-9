@@ -48,8 +48,8 @@ import {
 
     constructor(props) {
       super(props);
-      this.handleChange=this.handleChange.bind(this);
-      this.submit=this.submit.bind(this);
+      this.handleChange=this.handleChange.bind(this); 
+      this.submit=this.submit.bind(this); 
 
 
     
