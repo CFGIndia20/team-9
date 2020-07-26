@@ -24,7 +24,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import clsx from 'clsx';
-import classe from './Login.module.css' ;
+import classe from './Home.module.css' ;
 import { connect } from 'react-redux';
 import { fetchPosts,get_property,login,verify_otp,register,clear } from '../actions/postActions';
 
@@ -64,7 +64,77 @@ render() {
     return (
         <div>
             <br/>
-  heom     
+  {/* heom      */}
+
+  <Grid container>
+  <Grid item lg={12} md={12} sm={12} xs={12} >
+  <img  className={classe.img} src={require('./head.png')} />
+
+  </Grid>
+  </Grid>
+   
+<Grid container>
+ 
+
+  <Grid item lg={4} md={4} sm={1} xs={1} >
+  </Grid>
+  <Grid item lg={4} md={4} sm={10} xs={10} >
+      
+  <Grid item lg={12} md={12} sm={12} xs={12} >
+    {/* <span className={classe.head} ></span> */}
+  {/* home */}
+  {/* <Grid container>
+
+  </Grid> */}
+  <Grid item lg={12} md={12} sm={12} xs={12} >
+    <div className={classe.back} >
+      
+{/* <ul> */}
+  
+{/* <li> */}
+  <p className={classe.body}>
+  Umeed is a<span className={classe.col}> non-profit </span>that hopes to promote<span className={classe.col}> women’s empowerment</span> and radically
+   alter the mindsets that exist within society.
+  </p>
+  {/* </li> */}
+  {/* <li> */}
+  <p className={classe.body}>
+  Through providing<span className={classe.col}>  training and knowledge </span>to women, we aspire to bring
+   about an immediate and lasting difference; one of hope, dignity and security.
+  </p>
+  {/* </li> */}
+  {/* <li> */}
+  <p className={classe.body}> 
+
+We provide training to women to<span className={classe.col}>  create and sell</span> simple and beautiful eco-friendly 
+newspaper handicrafts, thus giving these women <span className={classe.col}> exposure to new life-skills;</span> such as planning, budgeting, teamwork and creativity. 
+
+ </p>
+ {/* </li> */}
+ {/* <li> */}
+ <p className={classe.body}>
+ These skills will go a long way to drive their confidence,
+  empower them and, eventually, <span className={classe.col}> alter the oppressive mindsets around them to progressive ones.</span>
+ </p>
+ {/* </li> */}
+ {/* <li> */}
+ <p className={classe.body}>
+
+ Umeed does not exist only to better the lives of these women; but to better the lives of their <span className={classe.col}> whole families and communities.</span>
+ </p>
+ {/* </li> */}
+{/* </ul>   */}
+</div>
+
+
+  </Grid>
+
+      </Grid>
+
+  </Grid>
+  <Grid item lg={4} md={4} sm={1} xs={1} >
+  </Grid>
+      </Grid>
         </div>
         );
         }

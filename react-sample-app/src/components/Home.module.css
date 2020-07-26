@@ -1,0 +1,23 @@
+/* .head{
+    background-color: #9E1F5F;
+} */
+.img{
+    padding: 4%;
+    padding-left: -10%;
+    width:100%;
+}
+.body{
+    padding-left:5%;
+    padding-right:5%;
+    padding-top:5%;
+    font-size: 14px;
+
+}
+.back{
+    background-color: #D5D5D5;
+}
+
+.col{
+    color:#A01F6;
+    font-weight:bold;
+}
