@@ -65,7 +65,7 @@ export const upload_your_file = (id,mode,file,message) => dispatch => {
   sendkey.append('description',message);
   console.log(sendkey.get("file"));
   console.log(typeof(sendkey));
-
+    
   // headers={'Content-Type': 'multipart/form-data' };
  
   console.log(sendkey.entries());
@@ -76,7 +76,7 @@ export const upload_your_file = (id,mode,file,message) => dispatch => {
 
   // if(mode=='homework'){
     console.log('task');
-      
+
       axios.post('https://us-central1-cfg2020-dca44.cloudfunctions.net/Express/task/dailyUpdate',sendkey,{
         headers: {
           'Content-Type': 'multipart/form-data'
