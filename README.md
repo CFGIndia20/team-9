@@ -19,5 +19,19 @@ As it is rightly said, "Women are the pillars of society". Determination, suppor
    
    
 ### Our Solution
+1) Digitized the assignment of tasks on the basis of skills 
+  - Assingning the tasks weekly
+  - And tracking the progress through daily updates via voice recording, video, image and text. 
+2) The women can see their pending tasks, homework to pace up their work.
+  - They can ask to be assigned more tasks.
+  - They can also ask to be removed from the current task.
+3) Calculation of compensation on the basis of attendance as well quality work completed.
+  - Taking the base amount for each hour and calculating the total 
+  
+  
+### Future Scope
+1) Adding Localization 
+2)
+3)
 
- 
+### Tech Stack
