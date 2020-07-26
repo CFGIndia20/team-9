@@ -40,7 +40,7 @@ export class AssignHomework extends Component {
                 <Form onSubmit={()=>this.handleSubmit()}>
                     <Form.Group>
                         <Form.Label>HomeWork:</Form.Label>
-                        <Form.Control type="text" placeholder="Enter HomeWork" onChange={this.handleChange('HomeWork')}/>
+                        <input type="text" placeholder="Enter HomeWork" onChange={this.handleChange('HomeWork')}/>
                         <Form.Text className="text-muted">
                         Enter the title of the homework
                         </Form.Text>
@@ -48,12 +48,12 @@ export class AssignHomework extends Component {
 
                     <Form.Group>
                         <Form.Label>Date:</Form.Label>
-                        <Form.Control type="date" placeholder="Enter Date" onChange={this.handleChange('date')} />
+                        <input type="date" placeholder="Enter Date" onChange={this.handleChange('date')} />
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Label>Description:</Form.Label>
-                        <Form.Control type="textfield" placeholder="Enter description" onChange={this.handleChange('description')} />
+                        <input type="textfield" placeholder="Enter description" onChange={this.handleChange('description')} />
                         <Form.Text className="text-muted">
                         Enter the description of the homework
                         </Form.Text>
@@ -61,7 +61,7 @@ export class AssignHomework extends Component {
 
                     <Form.Group>
                         <Form.Label>Deadline:</Form.Label>
-                        <Form.Control type="date" placeholder="Enter Deadline" onChange={this.handleChange('deadline')}/>
+                        <input type="date" placeholder="Enter Deadline" onChange={this.handleChange('deadline')}/>
                         <Form.Text className="text-muted">
                         Enter the deadline of the homework
                         </Form.Text>
@@ -69,13 +69,13 @@ export class AssignHomework extends Component {
 
                     <Form.Group>
                         <Form.Label>To:</Form.Label>
-                        <Form.Control type="text" placeholder="Assign homework to ..." onChange={this.handleChange('to')}/>
+                        <input type="text" placeholder="Assign homework to ..." onChange={this.handleChange('to')}/>
                         <Form.Text className="text-muted">
                         Enter whom you want to assign the homework
                         </Form.Text>
                     </Form.Group>
 
-                    <Button type="submit" variant="secondary" style={{background:'#9e1f5f',color:'white'}}>
+                    <Button variant="secondary" style={{background:'#9e1f5f',color:'white'}} onClick={this.handleSubmit}>
                         Submit
                     </Button>
                 </Form>

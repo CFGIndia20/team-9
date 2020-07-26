@@ -34,7 +34,7 @@ export class AssignTask extends Component {
         console.log(this.state);
         // this.props.aas(this.state);
 //   console.log(event.target.elements.username.value);
-  alert("sf");
+  alert(this.state);
     }
 
     render() {
@@ -89,7 +89,7 @@ export class AssignTask extends Component {
                         </Form.Text>
                     </Form.Group>
 
-                    <Button type="submit" onClick={this.submit} variant="secondary" style={{background:'#9e1f5f',color:'white'}}>
+                    <Button onClick={this.handleSubmit} variant="secondary" style={{background:'#9e1f5f',color:'white'}}>
                         Submit
                     </Button>
                 </Form>
